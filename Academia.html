@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos na academia?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #ff0066;
+        }
+
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: red;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Vamos na academia?</h1>
+
+    <div id="container">
+        <button class="btn" id="yesBtn">Sim</button>
+        <button class="btn" id="noBtn">Não</button>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", function() {
+            const width = window.innerWidth - noBtn.offsetWidth;
+            const height = window.innerHeight - noBtn.offsetHeight;
+
+            const newX = Math.floor(Math.random() * width);
+            const newY = Math.floor(Math.random() * height);
+
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${newX}px`;
+            noBtn.style.top = `${newY}px`;
+        });
+
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            alert("Eu sabia que você ia dizer SIM! ❤️");
+        });
+    </script>
+
+</body>
+</html>
